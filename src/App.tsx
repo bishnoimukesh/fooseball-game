@@ -1,14 +1,12 @@
-import './App.css'
+import './App.css';
+import FoosballScene from './components/FoosballScene';
 
 function App() {
-
   return (
-    <>
-      <h1>
-        Fooseball game
-      </h1>
-    </>
-  )
+    <div style={{ width: '100vw', height: '100vh' }}>
+      <FoosballScene />
+    </div>
+  );
 }
 
-export default App
+export default App;
