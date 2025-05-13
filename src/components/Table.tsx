@@ -8,6 +8,7 @@ const Table: React.FC = () => {
   const goalPostRadius = 0.05;
   const goalPostHeight = 1;
   const goalDepth = 0.1;
+  const goalBoxDepth = 1.5;
   
   const lineMaterial = new THREE.LineBasicMaterial({ color: "white" });
 
@@ -20,24 +21,22 @@ const Table: React.FC = () => {
     lines.push(new THREE.Vector3(0, 0.01, -h), new THREE.Vector3(0, 0.01, h));
 
     // Outer boundary
-    lines.push(
-      new THREE.Vector3(-l, 0.5, -h),
-      new THREE.Vector3(l, 0.5, -h),
-      new THREE.Vector3(l, 0.5, -h),
-      new THREE.Vector3(l, 0.5, h),
-      new THREE.Vector3(l, 0.5, h),
-      new THREE.Vector3(-l, 0.5, h),
-      new THREE.Vector3(-l, 0.5, h),
-      new THREE.Vector3(-l, 0.5, -h)
-    );
+    // lines.push(
+    //   new THREE.Vector3(-l, 0.5, -h),
+    //   new THREE.Vector3(l, 0.5, -h),
+    //   new THREE.Vector3(l, 0.5, -h),
+    //   new THREE.Vector3(l, 0.5, h),
+    //   new THREE.Vector3(l, 0.5, h),
+    //   new THREE.Vector3(-l, 0.5, h),
+    //   new THREE.Vector3(-l, 0.5, h),
+    //   new THREE.Vector3(-l, 0.5, -h)
+    // );
 
     // Goal boxes
     const goalY1 = goalWidth / 2;
     const goalY2 = -goalWidth / 2;
 
     // Left
-    const goalBoxDepth = 1.5; // New larger depth
-
     lines.push(
       new THREE.Vector3(-l, 0.01, goalY1),
       new THREE.Vector3(-l + goalBoxDepth, 0.01, goalY1),
